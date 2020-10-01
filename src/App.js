@@ -15,6 +15,7 @@ function App() {
     intervalRef.current = setInterval(() => {
       setTimeLeft(prevState => {
         if (prevState >= 1) return prevState - 1
+        resetTimer()
         return 0
       })
     }, 1000)
@@ -23,6 +24,12 @@ function App() {
   const stopTimer = () => {
     clearInterval(intervalRef.current)
     setTitle('keep it up !')
+  }
+
+  const resetTimer = () => {
+    clearInterval(intervalRef.current)
+    setTitle('let the countdown begin !!!')
+    setTimeLeft(25 * 60)
   }
 
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
@@ -39,7 +46,7 @@ function App() {
       <div className='buttons'>
         <button onClick={startTimer}>start</button>
         <button onClick={stopTimer}>stop</button>
-        <button>reset</button>
+        <button onClick={resetTimer}>reset</button>
       </div>
     </div>
   );
