@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [timeLeft, setTimeLeft] = useState(25 * 60)
+
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = (timeLeft - (minutes * 60)).toString().padStart(2, '0')
+
   return (
     <div className="App">
       <h2>pomodoro!</h2>
       <div className='timer'>
-        <span>00</span>
+        <span>{minutes}</span>
         <span>:</span>
-        <span>00</span>
+        <span>{seconds}</span>
       </div>
       <div className='buttons'>
         <button>start</button>
