@@ -25,7 +25,12 @@ h2 {
 span {
   font-family: "Monoton", cursive;
   font-size: 150px;
-  letter-spacing: 10px;
+}
+.numbers {
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+  letter-spacing: 20px;
 }
 
 button {

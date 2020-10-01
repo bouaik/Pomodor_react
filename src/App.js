@@ -18,9 +18,9 @@ function App() {
     <div className="App">
       <h2>{title}</h2>
       <div className='timer'>
-        <span>{minutes}</span>
+        <span className='numbers'>{minutes}</span>
         <span>:</span>
-        <span>{seconds}</span>
+        <span className='numbers'>{seconds}</span>
       </div>
       <div className='buttons'>
         <button onClick={startTimer}>start</button>
