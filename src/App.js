@@ -2,21 +2,28 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [title, setTitle] = useState('let the countdown begin !!!')
   const [timeLeft, setTimeLeft] = useState(25 * 60)
 
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = (timeLeft - (minutes * 60)).toString().padStart(2, '0')
+  const startTimer = () => {
+    setInterval(() => {
+      setTimeLeft(prevState => prevState - 1)
+    }, 1000)
+  }
+
+  const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+  const seconds = (timeLeft - (minutes * 60)).toString().padStart(2, '0');
 
   return (
     <div className="App">
-      <h2>pomodoro!</h2>
+      <h2>{title}</h2>
       <div className='timer'>
         <span>{minutes}</span>
         <span>:</span>
         <span>{seconds}</span>
       </div>
       <div className='buttons'>
-        <button>start</button>
+        <button onClick={startTimer}>start</button>
         <button>stop</button>
         <button>reset</button>
       </div>

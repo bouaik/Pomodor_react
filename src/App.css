@@ -16,14 +16,16 @@
 }
 h2 {
   font-family: "Monoton", cursive;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: normal;
   margin-bottom: 40px;
+  word-spacing: 20px;
 }
 
 span {
   font-family: "Monoton", cursive;
   font-size: 150px;
+  letter-spacing: 10px;
 }
 
 button {
