@@ -11,6 +11,7 @@ function App() {
   let intervalRef = useRef(null)
 
   const startTimer = () => {
+    setTitle(`you're doing great !`)
     intervalRef.current = setInterval(() => {
       setTimeLeft(prevState => {
         if (prevState >= 1) return prevState - 1
@@ -21,6 +22,7 @@ function App() {
 
   const stopTimer = () => {
     clearInterval(intervalRef.current)
+    setTitle('keep it up !')
   }
 
   const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
