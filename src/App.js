@@ -28,12 +28,14 @@ function App() {
   const stopTimer = () => {
     if (intervalRef.current === null) return
     clearInterval(intervalRef.current)
+    intervalRef.current = null
     setTitle('keep it up !')
     setIsRunning(false)
   }
 
   const resetTimer = () => {
     clearInterval(intervalRef.current)
+    intervalRef.current = null
     setTitle('let the countdown begin !!!')
     setTimeLeft(25 * 60)
     setIsRunning(false)
